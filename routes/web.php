@@ -2,9 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\Public\PublicController::class, 'home'])->name('home');
+Route::get('/team', [App\Http\Controllers\Public\PublicController::class, 'team'])->name('team');
 
 Route::get('/dashboard', function () {
     return view('userzone.dashboard');
