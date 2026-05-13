@@ -12,15 +12,12 @@
         <div>
             <a href="{{ route('home') }}" class="text-white hover:text-gray-200 px-3">Accueil</a>
             <a href="{{ route('team') }}" class="text-white hover:text-gray-200 px-3">Nos équipes</a>
-            <a href="{{ route('calendar') }}" class="text-white hover:text-gray-200 px-3">Matchs</a>
-            <a href="{{ route('results') }}" class="text-white hover:text-gray-200 px-3">Resultat</a>
             <a href="{{ route('contact') }}" class="text-white hover:text-gray-200 px-3">Contact</a>
             <a href="{{ route('about') }}" class="text-white hover:text-gray-200 px-3">A propos</a>
             
             @auth
                 @if(auth()->user()->is_admin)
-                    <a href="{{ route('admin.players.index') }}" class="text-white hover:text-gray-200 px-3">players</a>
-                    <a href="{{ route('admin.teams.index') }}" class="text-white hover:text-gray-200 px-3">teams</a>
+                    <a href="{{ route('admin.players.index') }}" class="text-blue-700 hover:text-gray-200 px-3">Players</a>
                 @endif
             @endauth
  
