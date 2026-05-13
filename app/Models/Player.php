@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use app\Models\Player;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Team;
 
 class Player extends Model
 {
@@ -17,5 +17,14 @@ class Player extends Model
         'jersey_number',
         'dob',
         'nationality',
+        'team_id',
+
     ];
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+    
+
 }
