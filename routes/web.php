@@ -8,8 +8,12 @@ Route::get('/calendar', [App\Http\Controllers\Public\PublicController::class, 'c
 Route::get('/contact', [App\Http\Controllers\Public\PublicController::class, 'contact'])->name('contact');
 Route::get('/results', [App\Http\Controllers\Public\PublicController::class, 'results'])->name('results');
 Route::get('/about', [App\Http\Controllers\Public\PublicController::class, 'about'])->name('about');
-Route::get('/admin/players', [App\Http\Controllers\Admin\PlayerController::class, 'index'])->name('admin.players.index');
-Route::get('/admin/players/{player}', [App\Http\Controllers\Admin\PlayerController::class, 'show'])->name('admin.players.show');
+Route::get('/login', [App\Http\Controllers\Public\PublicController::class, 'login'])->name('login');
+
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/admin/players', [App\Http\Controllers\Admin\PlayerController::class, 'index'])->name('admin.players.index');
+    Route::get('/admin/players/{player}', [App\Http\Controllers\Admin\PlayerController::class, 'show'])->name('admin.players.show');
+});
 
 Route::get('/dashboard', function () {
     return view('userzone.dashboard');
