@@ -12,6 +12,6 @@ class PlayerSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Player::factory()->count(20)->create();
+        \App\Models\Player::factory()->count(100)->create();
     }
 }

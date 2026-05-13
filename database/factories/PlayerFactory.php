@@ -18,12 +18,11 @@ class PlayerFactory extends Factory
     public function definition(): array
     {
             return [
-        'first_name' => fake()->firstName('male'),
+        'first_name' => fake()->firstName('male,female'),
         'last_name' => fake()->lastName(),
         'position' => fake()->randomElement(['GK', 'DEF', 'M', 'ATT']),
-        'jersey_number' => fake()->unique()->numberBetween(1, 99),
-        'dob' => fake()->dateTimeBetween('-40 years', '-18 years')->format('Y-m-d'),
-        'nationality' => fake()->randomElement(['Belge', 'Français', 'Marocain', 'Néerlandais', 'Italien', 'Brésilien']),
+        'jersey_number' => fake()->numberBetween(1, 99),
+        'dob' => fake()->dateTimeBetween('-50 years', '-6 years')->format('Y-m-d'),
         ];
     }
 }

@@ -18,7 +18,6 @@ return new class extends Migration
         $table->string('position');
         $table->integer('jersey_number');
         $table->date('dob');
-        $table->string('nationality');
         $table->timestamps();
     });
 }
