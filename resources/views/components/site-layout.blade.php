@@ -17,6 +17,28 @@
             <a href="{{ route('contact') }}" class="text-white hover:text-gray-200 px-3">Contact</a>
             <a href="{{ route('about') }}" class="text-white hover:text-gray-200 px-3">A propos</a>
             
+            @auth
+                @if(auth()->user()->is_admin)
+                    <a href="{{ route('admin.players.index') }}" class="text-white hover:text-gray-200 px-3">players</a>
+                    <a href="{{ route('admin.teams.index') }}" class="text-white hover:text-gray-200 px-3">teams</a>
+                @endif
+            @endauth
+ 
+
+            @guest
+                <a href="{{ route('login') }}" class="text-white hover:text-gray-200 px-3">Login</a>
+                <a href= "{{ route('register') }}" class="text-white hover:text-gray-200 px-3">Register</a> 
+            @endguest
+            
+            @auth
+                <form method="POST" action="{{ route('logout') }}" class="inline">
+            @csrf
+                <button type="submit" class="text-white hover:text-gray-200 px-3">Logout</button>
+            </form>
+            @endauth
+            
+
+
         </div>
     </div>
 </nav>
