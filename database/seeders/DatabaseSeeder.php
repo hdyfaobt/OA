@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
 
         // Joueurs
         $this->call(PlayerSeeder::class);
+        $this->call(TeamSeeder::class);
 
         // User::factory(10)->create();
         // Category::factory(5)->create();
