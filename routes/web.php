@@ -8,10 +8,16 @@ Route::get('/calendar', [App\Http\Controllers\Public\PublicController::class, 'c
 Route::get('/contact', [App\Http\Controllers\Public\PublicController::class, 'contact'])->name('contact');
 Route::get('/results', [App\Http\Controllers\Public\PublicController::class, 'results'])->name('results');
 Route::get('/about', [App\Http\Controllers\Public\PublicController::class, 'about'])->name('about');
+
 Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/admin/players', [App\Http\Controllers\Admin\PlayerController::class, 'index'])->name('admin.players.index');
+    Route::get('/admin/players/create', [App\Http\Controllers\Admin\PlayerController::class, 'create'])->name('admin.players.create');
+    Route::post('/admin/players', [App\Http\Controllers\Admin\PlayerController::class, 'store'])->name('admin.players.store');
     Route::get('/admin/players/{player}', [App\Http\Controllers\Admin\PlayerController::class, 'show'])->name('admin.players.show');
-});
+    Route::get('/admin/players/{player}/edit', [App\Http\Controllers\Admin\PlayerController::class, 'edit'])->name('admin.players.edit');
+    Route ::put('/admin/players/{player}', [App\Http\Controllers\Admin\PlayerController::class, 'update'])->name('admin.players.update');
+
+    });
 
 Route::get('/dashboard', function () {
     return view('userzone.dashboard');
