@@ -13,16 +13,16 @@
                     <dd class="font-semibold">#{{ $player->jersey_number }}</dd>
                 </div>
                 <div>
-                    <dt class="text-gray-500 text-sm">Position</dt>
-                    <dd class="font-semibold">{{ $player->position }}</dd>
+                    <dt class="text-gray-500 text-sm">Numero d'affiliation</dt>
+                    <dd class="font-semibold">{{ $player->affiliation }}</dd>
                 </div>
                 <div>
                     <dt class="text-gray-500 text-sm">Date de naissance</dt>
                     <dd class="font-semibold">{{ $player->dob }}</dd>
                 </div>
                 <div>
-                    <dt class="text-gray-500 text-sm">Nationalité</dt>
-                    <dd class="font-semibold">{{ $player->nationality }}</dd>
+                    <dt class="text-gray-500 text-sm">Équipe</dt>
+                    <dd class="font-semibold">{{ $player->team->name }}</dd>    
                 </div>
             </dl>
         </div>

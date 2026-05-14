@@ -13,10 +13,9 @@ class Player extends Model
     protected $fillable = [
         'first_name',
         'last_name',
-        'position',
+        'affiliation',
         'jersey_number',
         'dob',
-        'nationality',
         'team_id',
 
     ];
@@ -25,6 +24,4 @@ class Player extends Model
     {
         return $this->belongsTo(Team::class);
     }
-    
-
 }

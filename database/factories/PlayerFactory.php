@@ -20,7 +20,7 @@ class PlayerFactory extends Factory
             return [
         'first_name' => fake()->firstName('male,female'),
         'last_name' => fake()->lastName(),
-        'position' => fake()->randomElement(['GK', 'DEF', 'M', 'ATT']),
+        'affiliation' => fake()->numerify('#######'),
         'jersey_number' => fake()->numberBetween(1, 99),
         'dob' => fake()->dateTimeBetween('-50 years', '-6 years')->format('Y-m-d'),
         ];
